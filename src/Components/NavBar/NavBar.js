@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { Nav, Navbar} from 'react-bootstrap'
 import CartWidget from "./CartWidget/CartWidget";
 import "./CartWidget/CartWidget.css"
-import ListItems from "./ListItems/ListItems";
+import ListItems from "./ItemsListContainer/ListItems";
 
 export default function NavBar () {
           return (
