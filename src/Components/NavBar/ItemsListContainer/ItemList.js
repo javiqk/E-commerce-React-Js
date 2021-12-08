@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import './ListItems.css'
-import Item from '../Items/Items'
+import './ItemList.css'
+import Item from '../Item/Item'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import CircularProgress from '@mui/material/CircularProgress';
