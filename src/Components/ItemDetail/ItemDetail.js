@@ -1,21 +1,20 @@
-import React from "react";
+import React from 'react';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 
 export default function ItemDetail ({ data }) {
-
-const theme = createTheme ({
-    palette: {
-        base: {
-            main: "#070802"
+    const theme = createTheme ({
+        palette: {
+            base: {
+                main: "#070802"
+            },
+            background: {
+                main: "#e9ff41"
+            },
         },
-        background: {
-            main: "#e9ff41"
-        },
-    },
-});
+    });
 
 return (
         <>

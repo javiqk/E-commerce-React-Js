@@ -1,10 +1,9 @@
-import React from "react"
-import "./NavBar.css"
-import 'bootstrap/dist/css/bootstrap.css'
-import { Nav, Navbar} from 'react-bootstrap'
+import React from "react";
+import "./NavBar.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import { Nav, Navbar} from 'react-bootstrap';
 import CartWidget from "../CartWidget/CartWidget";
 import "../CartWidget/CartWidget.css"
-import ListItems from "../ItemsListContainer/ItemListContainer";
 import {Link} from "react-router-dom"
 
 export default function NavBar () {
