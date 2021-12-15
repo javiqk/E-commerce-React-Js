@@ -2,9 +2,9 @@ import React from "react"
 import "./NavBar.css"
 import 'bootstrap/dist/css/bootstrap.css'
 import { Nav, Navbar} from 'react-bootstrap'
-import CartWidget from "./CartWidget/CartWidget";
-import "./CartWidget/CartWidget.css"
-import ListItems from "./ItemsListContainer/ItemList";
+import CartWidget from "../CartWidget/CartWidget";
+import "../CartWidget/CartWidget.css"
+import ListItems from "../ItemsListContainer/ItemListContainer";
 
 export default function NavBar () {
           return (

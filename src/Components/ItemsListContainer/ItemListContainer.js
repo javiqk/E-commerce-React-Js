@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import './ItemList.css'
+import './ItemListContainer.css'
 import Item from '../Item/Item'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import CircularProgress from '@mui/material/CircularProgress';
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
 const ListItems = () => {
     const [loader, setLoader] = useState(true)
@@ -72,6 +73,7 @@ const ListItems = () => {
                             })}
                         </Grid>
                 }
+                <ItemDetailContainer />
             </Container>
         </>
     )
