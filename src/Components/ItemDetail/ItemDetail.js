@@ -1,15 +1,26 @@
-import React from "react"
-import { ThemeProvider } from "react-bootstrap"
+import React from "react";
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import {createTheme, ThemeProvider} from '@mui/material/styles';
 
 export default function ItemDetail ({ data }) {
-    console.log (data)
+
+const theme = createTheme ({
+    palette: {
+        base: {
+            main: "#070802"
+        },
+        background: {
+            main: "#e9ff41"
+        },
+    },
+});
+
 return (
         <>
             <Container className="product-item-container">
-                <ThemeProvider>
+                <ThemeProvider theme={theme}>
                     <div>
                         <Grid container spacing={2}>
                             <Grid item xs={8} >

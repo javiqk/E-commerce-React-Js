@@ -1,5 +1,5 @@
-import ItemDetailContainer from "../../Components/ItemDetailContainer/ItemDetailContainer"
+import ItemDetail from "../../Components/ItemDetail/ItemDetail"
 
 export default function ItemDetailPage () {
-    return <ItemDetailContainer />
+    return <ItemDetail />
 }

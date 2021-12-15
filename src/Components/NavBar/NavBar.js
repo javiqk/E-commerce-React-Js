@@ -24,7 +24,6 @@ export default function NavBar () {
                     <CartWidget/> 
                   </Nav>
               </Navbar>
-              <ListItems/> 
             </div>
           );
 }

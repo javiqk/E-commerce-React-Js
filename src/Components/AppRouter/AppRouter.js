@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "../NavBar/NavBar.js"
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 import HomePage from "../../pages/HomePage/HomePage.js";
 import ContactPage from "../../pages/ContactPage/ContactPage.js";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.js";
