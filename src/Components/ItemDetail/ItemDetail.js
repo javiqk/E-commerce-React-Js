@@ -1,7 +1,6 @@
 import React from "react"
 
 export default function ItemDetail ({ data }) {
-
     console.log (data)
     return (
         <>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Item.css'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import {Link} from "react-router-dom"
 
 const theme = createTheme({
     palette: {
@@ -45,8 +46,8 @@ export default function Item({ data }) {
                             <Button variant="outlined" color="base" onClick={updateItem} >+</Button>
                         </div>
                     </div>
+                    <Button><Link to={`/products/${data.id}`}></Link></Button>
                     <Button variant="contained" color="background">Add to cart</Button>
-
                 </div>
             </ThemeProvider>
         </div>

@@ -5,6 +5,7 @@ import { Nav, Navbar} from 'react-bootstrap'
 import CartWidget from "../CartWidget/CartWidget";
 import "../CartWidget/CartWidget.css"
 import ListItems from "../ItemsListContainer/ItemListContainer";
+import {Link} from "react-router-dom"
 
 export default function NavBar () {
           return (
@@ -16,10 +17,10 @@ export default function NavBar () {
                 </Navbar.Brand>
                 <Navbar.Toggle className="coloring" />
                   <Nav>
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#blog">Products</Nav.Link>
-                    <Nav.Link href="#about-us">About Us</Nav.Link>
-                    <Nav.Link href="#contact-us">Contact Us</Nav.Link>
+                    <Nav.Link to="/">Home</Nav.Link>
+                    <Nav.Link to="/product">Products</Nav.Link>
+                    <Nav.Link to="/aboutus">About Us</Nav.Link>
+                    <Nav.Link to="/contact">Contact Us</Nav.Link>
                     <CartWidget/> 
                   </Nav>
               </Navbar>

@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react"
-import ItemDetail from "../../ItemDetail/ItemDetail"
+import ItemDetail from "../ItemDetail/ItemDetail"
 
 export default function ItemDetailContainer () {
     const [product, setProduct] = useState ([])
 
-    const dataProduct =
-        {
+    const dataProduct = {
             id: 1,
             name: 'Remera Abeja',
             price: 1400,
             stock: 10,
             img: 'remeraAbeja.jpg'
-        },
+        }
 
         const getProduct = new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -28,8 +27,7 @@ export default function ItemDetailContainer () {
 
     return (
         <div>
-            ContainerItemDetail
-            <ItemDetail />
+            <ItemDetail data={product} />
         </div>
     )
 }
