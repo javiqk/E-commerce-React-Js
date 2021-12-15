@@ -29,6 +29,7 @@ export default function Item({ data }) {
 
     return (
         <div className="card-item-product">
+            <Link to={`/products/${data.id}`}>
             <ThemeProvider theme={theme}>
                 <span className="stock-text">Stock : {data.stock}</span>
                 <div className="item-image">
@@ -46,10 +47,10 @@ export default function Item({ data }) {
                             <Button variant="outlined" color="base" onClick={updateItem} >+</Button>
                         </div>
                     </div>
-                    <Button><Link to={`/products/${data.id}`}></Link></Button>
                     <Button variant="contained" color="background">Add to cart</Button>
                 </div>
             </ThemeProvider>
+            </Link>
         </div>
 
     )

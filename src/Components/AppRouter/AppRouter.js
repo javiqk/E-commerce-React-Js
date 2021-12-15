@@ -12,9 +12,8 @@ export default function AppRouter() {
         <BrowserRouter>
         <NavBar />
         <Routes> 
-             <Route path="/products/:id" element = {<ItemDetailPage />} />
+            <Route path="/products/:id" element = {<ItemDetailPage />} />
             <Route path="/contact" element = {<ContactPage />} />
-            <Route path="/product" element = {<ItemDetailContainer />} />
             <Route path="/" element = {<HomePage />} />
             <Route path="*" element = {<NotFoundPage />} />
         </Routes> 
