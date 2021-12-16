@@ -16,10 +16,10 @@ export default function NavBar () {
                 </Navbar.Brand>
                 <Navbar.Toggle className="coloring" />
                   <Nav>
-                    <Nav.Link to="/">Home</Nav.Link>
-                    <Nav.Link to="/product">Products</Nav.Link>
-                    <Nav.Link to="/aboutus">About Us</Nav.Link>
-                    <Nav.Link to="/contact">Contact Us</Nav.Link>
+                    <Link className="links" to="/"><Nav>Home</Nav></Link>
+                    <Link className="links" to="/product"><Nav>Products</Nav></Link>
+                    <Link className="links" to="/aboutus"><Nav>About Us</Nav></Link>
+                    <Link className="links" to="/contact"><Nav>Contact Us</Nav></Link>
                     <CartWidget/> 
                   </Nav>
               </Navbar>
