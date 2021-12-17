@@ -8,10 +8,10 @@ export default function ItemDetail ({ data }) {
     const theme = createTheme ({
         palette: {
             base: {
-                main: "#070802"
+                main: '#070801',
             },
             background: {
-                main: "#e9ff41"
+                main: '#e9ff30',
             },
         },
     });

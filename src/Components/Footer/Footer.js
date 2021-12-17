@@ -4,7 +4,7 @@ import './Footer.css'
 const Footer = () => {
     return (
         <footer>
-            FOOTER
+        <h3 className='Footer-position'>Monkey Argentina, todos los derechos reservados®</h3>
         </footer>
     )
 }

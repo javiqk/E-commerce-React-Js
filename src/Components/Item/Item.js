@@ -7,10 +7,10 @@ import {Link} from "react-router-dom"
 const theme = createTheme({
     palette: {
         base: {
-            main: '#070802',
+            main: '#070801',
         },
         background: {
-            main: '#e9ff41',
+            main: '#e9ff30',
         },
     },
 });
@@ -46,7 +46,7 @@ export default function Item({ data }) {
                             <Button variant="outlined" color="base" onClick={updateItem} >+</Button>
                         </div>
                     </div>
-                    <Link to={`/products/${data.id}`}><Button variant="contained" color="background">Add to cart</Button></Link>
+                    <Link className='link-Button__color' to={`/products/${data.id}`}><Button variant="contained" color="background">Add to cart</Button></Link>
                 </div>
             </ThemeProvider>
         </div>

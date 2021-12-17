@@ -59,3 +59,7 @@ span.stock-text {
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 8%);
     opacity: 0.6;
 }
+
+.link-Button__color {
+    color:black;
+}

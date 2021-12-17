@@ -73,7 +73,7 @@ const ListItems = () => {
                             })}
                         </Grid>
                 }
-                <ItemDetailContainer />
+
             </Container>
         </>
     )
