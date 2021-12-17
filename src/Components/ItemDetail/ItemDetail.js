@@ -20,7 +20,7 @@ return (
         <>
             <Container className="product-item-container">
                 <ThemeProvider theme={theme}>
-                    <div>
+                    <div className='ItemDetail-padding'>
                         <Grid container spacing={2}>
                             <Grid item xs={8} >
                             <img src={`../../../assets/${data.img}`} alt="product image" />
@@ -31,7 +31,7 @@ return (
                             <Button variant="contained" color="background">Comprar</Button>
                         </Grid>
                         </Grid>
-                </div>
+                    </div>
                 </ThemeProvider>
             </Container>
         </>

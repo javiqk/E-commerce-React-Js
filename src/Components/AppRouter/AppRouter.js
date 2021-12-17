@@ -6,6 +6,7 @@ import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.js";
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer.js";
 import ProductsPage from "../../pages/ProductsPage/ProductsPage.js";
 import AboutUsPage from "../../pages/AboutUsPage/AboutUsPage.js";
+import Footer from '../Footer/Footer';
 
 export default function AppRouter() {
 
@@ -20,6 +21,7 @@ export default function AppRouter() {
             <Route path="/" element = {<HomePage />} />
             <Route path="*" element = {<NotFoundPage />} />
         </Routes> 
+        <Footer />
         </BrowserRouter>
     )
 

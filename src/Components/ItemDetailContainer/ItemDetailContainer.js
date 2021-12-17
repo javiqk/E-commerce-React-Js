@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
+import CircularProgress from '@mui/material/CircularProgress';
 import { useParams } from "react-router-dom"
 
-export default function ItemDetailContainer () {
-    const [product, setProduct] = useState ([])
-    const {id} = useParams()
+    export default function ContainerItemDetail() {
+        const [product, setProduct] = useState([])
+        const [loader, setLoader] = useState(true)
+        const { id } = useParams()
 
     const dataProducts = [{
             id: 1,
@@ -42,19 +44,26 @@ export default function ItemDetailContainer () {
             }, 2000)
         })
 
-    useEffect (() => {
-        getProduct.then (resultsProducts => {
+
+    useEffect(() => {
+        getProduct.then(resultsProducts => {
             resultsProducts.filter(resultProduct => {
-                if (resultProduct.id === parseInt (id)) {
-                    setProduct (resultProduct)
+                if (resultProduct.id === parseInt(id)) {
+                    setProduct(resultProduct)
+                    setLoader(false)
                 }
             })
         })
-    },[])
+    }, [id])
 
     return (
         <div>
-            <ItemDetail data={product} />
+            {loader ?
+                <CircularProgress />
+                    :
+                <ItemDetail data={product} />
+            }
         </div>
     )
+
 }
