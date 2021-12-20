@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 
+
 export default function ItemDetail ({ data }) {
     const theme = createTheme ({
         palette: {
