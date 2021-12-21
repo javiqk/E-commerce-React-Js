@@ -6,7 +6,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { useParams } from "react-router-dom";
 
 
-const FilteredItems = () => {
+export default function FilteredItems () {
     const [loader, setLoader] = useState(true)
     const [products, setProducts] = useState([])
     const { category } = useParams()
@@ -92,8 +92,8 @@ const FilteredItems = () => {
         })
         useEffect(() => {
             getProducts.then(resultsProducts => {
-                resultsProducts.filter(resultProduct => {
-                    if (resultProduct.categoria === (category)) {
+                resultsProducts.filter (resultProduct => {
+                    if (resultProduct.category === (category)) {
                         setProducts(resultProduct)
                         setLoader(false)
                     }
@@ -115,7 +115,7 @@ const FilteredItems = () => {
                         <Grid container spacing={2}>
                             {products.map(product => {
                                 return (
-                                    <Grid item xs={3} key={product.category}>
+                                    <Grid item xs={3} key={products.category}>
                                         <Item data={products} />
                                     </Grid>
                                 )
@@ -128,5 +128,3 @@ const FilteredItems = () => {
     )
 }
 
-
-export default FilteredItems;

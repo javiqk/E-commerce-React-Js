@@ -4,13 +4,11 @@ import Item from '../Item/Item'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import CircularProgress from '@mui/material/CircularProgress';
-import { useParams } from "react-router-dom";
 
 
 const ListItems = () => {
     const [loader, setLoader] = useState(true)
     const [products, setProducts] = useState([])
-    const { category } = useParams()
     const dataProducts = [
         {
             id: 1,
