@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from "react";
 import './Item.css'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {Link} from 'react-router-dom';
 import Button from '@mui/material/Button';
-import {Link} from "react-router-dom"
 
 const theme = createTheme({
     palette: {
@@ -14,18 +14,11 @@ const theme = createTheme({
         },
     },
 });
-
 export default function Item({ data }) {
-
-    const [itemCount, setItemCout] = useState(0)
-
-    const updateItem = () => {
-        itemCount < data.stock && setItemCout(itemCount + 1)
+    const onAdd = (value) => {
+        console.log("items agregados: ", value)
     }
 
-    const removeItem = () => {
-        itemCount > 0 && setItemCout(itemCount - 1)
-    }
 
     return (
         <div className="card-item-product">
@@ -36,17 +29,7 @@ export default function Item({ data }) {
                 </div>
                 <div className="item-info">
                     <h2>{data.name}</h2>
-                    <div className="item-count">
-                        <div className="item-count__info">
-                            <span>Cantidad: </span>
-                        </div>
-                        <div className="item-count__buttons">
-                            <Button variant="outlined" color="base" onClick={removeItem}>-</Button>
-                            <p>{itemCount}</p>
-                            <Button variant="outlined" color="base" onClick={updateItem} >+</Button>
-                        </div>
-                    </div>
-                    <Link className='link-Button__color' to={`/products/${data.id}`}><Button variant="contained" color="background">Add to cart</Button></Link>
+                    <Link className='link-Button__color' to={`/products/${data.id}`}><Button variant="contained" color="background">Ver detalle</Button></Link>
                 </div>
             </ThemeProvider>
         </div>

@@ -1,4 +1,5 @@
 import React, {useState , useEffect } from "react";
+import Button from '@mui/material/Button';
 
 export default function Product ({stock}) {
     const [itemCount, setItemCount] = useState (0)
@@ -12,11 +13,11 @@ export default function Product ({stock}) {
 
 return (
     <div>
-       <h1>Producto</h1>
-       <h1>{itemCount}</h1>
-       <button onClick={updateItem}>+</button>
-       <button onClick={removeItem}>-</button>
-       <button>Agregar al carrito</button>
+       <h4>Cantidad</h4>
+       <h8>{itemCount}</h8>
+       <Button onClick={updateItem}>+</Button>
+       <Button onClick={removeItem}>-</Button>
+       <Button>Agregar al carrito</Button>
        <span>stock: {stock}</span>
     </div>
 )

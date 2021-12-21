@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import CircularProgress from '@mui/material/CircularProgress';
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 
     export default function ContainerItemDetail() {
         const [product, setProduct] = useState([])
         const [loader, setLoader] = useState(true)
-        const { id, category } = useParams()
+        const { id } = useParams()
 
     const dataProducts = [{
         id: 1,
@@ -82,7 +82,7 @@ import { useParams } from "react-router-dom"
     },
     ]
 
-        const getProduct = new Promise((resolve, reject) => {
+    const getProduct = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(dataProducts)
             }, 2000)
@@ -100,16 +100,7 @@ import { useParams } from "react-router-dom"
         })
     }, [id])
 
-    useEffect(() => {
-        getProduct.then(resultsProducts => {
-            resultsProducts.filter(resultProduct => {
-                if (resultProduct.category === (category)) {
-                    setProduct(resultProduct)
-                    setLoader(false)
-                }
-            })
-        })
-    }, [category])
+  
 
     return (
         <div>

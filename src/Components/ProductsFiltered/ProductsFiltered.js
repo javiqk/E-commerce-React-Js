@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './ItemListContainer.css'
 import Item from '../Item/Item'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -7,7 +6,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { useParams } from "react-router-dom";
 
 
-const ListItems = () => {
+const FilteredItems = () => {
     const [loader, setLoader] = useState(true)
     const [products, setProducts] = useState([])
     const { category } = useParams()
@@ -18,7 +17,7 @@ const ListItems = () => {
             price: 1400,
             stock: 10,
             img: 'remeraAbeja.jpg',
-            category: "remera",
+            category: "remeras",
         },
         {
             id: 2,
@@ -26,7 +25,7 @@ const ListItems = () => {
             price: 1500,
             stock: 20,
             img: 'remeraBugs.jpg',
-            category: "remera",
+            category: "remeras",
         },
         {
             id: 3,
@@ -34,7 +33,7 @@ const ListItems = () => {
             price: 1700,
             stock: 10,
             img: 'remeraCactus.jpg',
-            category: "remera",
+            category: "remeras",
         },
         {
             id: 4,
@@ -42,7 +41,7 @@ const ListItems = () => {
             price: 1200,
             stock: 25,
             img: 'remeraCupcake.jpg',
-            category: "remera",
+            category: "remeras",
         },
         {
             id: 5,
@@ -50,7 +49,7 @@ const ListItems = () => {
             price: 1700,
             stock: 13,
             img: 'remeraBart.jpg',
-            category: "remera",
+            category: "remeras",
         },
         {
             id: 6,
@@ -58,7 +57,7 @@ const ListItems = () => {
             price: 3700,
             stock: 12,
             img: 'buzoEspacial.jpg',
-            category: "buzo",
+            category: "buzos",
         },
         {
             id: 7,
@@ -66,7 +65,7 @@ const ListItems = () => {
             price: 3700,
             stock: 17,
             img: 'buzoPapas.jpg',
-            category: "buzo",
+            category: "buzos",
         },
         {
             id: 8,
@@ -74,7 +73,7 @@ const ListItems = () => {
             price: 3700,
             stock: 19,
             img: 'buzoSimpson.jpg',
-            category: "buzo",
+            category: "buzos",
         },
         {
             id: 9,
@@ -87,22 +86,26 @@ const ListItems = () => {
     ]
 
     const getProducts = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(dataProducts)
-        }, 2000)
-    })
-
-    useEffect(() => {
-        getProducts.then((data) => {
-            setProducts(data)
-            setLoader(false)
+            setTimeout(() => {
+                resolve(dataProducts)
+            }, 2000)
         })
-    }, [])
+        useEffect(() => {
+            getProducts.then(resultsProducts => {
+                resultsProducts.filter(resultProduct => {
+                    if (resultProduct.categoria === (category)) {
+                        setProducts(resultProduct)
+                        setLoader(false)
+                    }
+                })
+            })
+        }, [category])
+
 
     
     return (
         <>
-            <h2>Productos Destacados</h2>
+            <h2>{category}</h2>
             <Container className="product-container">
                 {
                     loader
@@ -112,8 +115,8 @@ const ListItems = () => {
                         <Grid container spacing={2}>
                             {products.map(product => {
                                 return (
-                                    <Grid item xs={3} key={product.id}>
-                                        <Item data={product} />
+                                    <Grid item xs={3} key={product.category}>
+                                        <Item data={products} />
                                     </Grid>
                                 )
                             })}
@@ -126,4 +129,4 @@ const ListItems = () => {
 }
 
 
-export default ListItems
+export default FilteredItems;

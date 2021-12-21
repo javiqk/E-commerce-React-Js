@@ -17,7 +17,7 @@ export default function AppRouter() {
         <NavBar />
         <Routes> 
             <Route path="/products/:id" element = {<ItemDetailPage />} />
-            <Route path="/categoria" element = {<CategoriesPage />} />
+            <Route path="/categoria/:category" element = {<CategoriesPage />} />
             <Route path="/contact" element = {<ContactPage />} />
             <Route path="/cart" element = {<CartPage />} />
             <Route path="/aboutus" element = {<AboutUsPage />} />

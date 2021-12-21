@@ -1,5 +1,5 @@
-import ListItems from "../../Components/ItemsListContainer/ItemListContainer"
+import FilteredItems from "../../Components/ProductsFiltered/ProductsFiltered";
 
 export default function CategoriesPage () {
-    return <ListItems />
+    return <FilteredItems />
 }
