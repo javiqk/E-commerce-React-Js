@@ -1,7 +1,8 @@
 import React, {useState , useEffect } from "react";
 import Button from '@mui/material/Button';
+import { Grid } from "@mui/material";
 
-export default function Product ({stock}) {
+export default function Product ({stock, onAdd}) {
     const [itemCount, setItemCount] = useState (0)
 
     const updateItem = () => {
@@ -13,12 +14,12 @@ export default function Product ({stock}) {
 
 return (
     <div>
-       <h4>Cantidad</h4>
-       <h8>{itemCount}</h8>
-       <Button onClick={updateItem}>+</Button>
-       <Button onClick={removeItem}>-</Button>
-       <Button>Agregar al carrito</Button>
-       <span>stock: {stock}</span>
+        <span>Cantidad: </span>
+        <h8>{itemCount} </h8>
+        <span> stock: {stock} </span>
+        <Button variant="contained" color="success" onClick={updateItem} >+</Button>
+        <Button variant="contained" color="error" onClick={removeItem}>-</Button> 
+        <Button>Agregar al carrito</Button>
     </div>
 )
 }

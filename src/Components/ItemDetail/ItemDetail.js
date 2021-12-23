@@ -1,20 +1,25 @@
-import './ItemDetail.css'
-import { useState } from 'react'
+import './ItemDetail.css';
+import { useState, useContext } from 'react';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ItemCount from "../ItemCount/ItemCount";
 import {Link} from 'react-router-dom';
-
+import CartContext from "../../Components/CartContext/CartContext";
 
 export default function ItemDetail({ data }) {
     const [quantityItem, setQuantityItem] = useState(0)
+    const { addProducts , products} = useContext(CartContext)
+    console.log("data item: ", data)
     const [itemCart, setItemCart] = useState(
         {
             name: data.name,
             id: data.id,
-            quantity: 0
+            quantity: 0,
+            price: data.price,
+            image: data.img,
+            quantity: 0,
         }
     )
     const theme = createTheme({
@@ -30,13 +35,13 @@ export default function ItemDetail({ data }) {
 
 
     const onAdd = (value, name) => {
-        console.log("items agregados: ", value)
         itemCart.quantity = value
         console.log(name)
     }
 
     const sendItem = () => {
-        console.log("itemCart: ", itemCart)
+        addProducts(itemCart)
+        console.log("Productos agregados: ", products)
     }
 
     return (
@@ -49,15 +54,14 @@ export default function ItemDetail({ data }) {
                                 <img src={`../assets/${data.img}`} />
                             </Grid>
                             <Grid item xs={4} >
-                                <h2>{data.name} </h2>
+                                <h2>{data.name}</h2>
                                 <p>$ {data.price}</p>
                                 <ItemCount stock={data.stock} onAdd={onAdd}/>
                                 <Button variant="contained" color="background" onClick={sendItem}>
-                                    <Link to="/cart">Comprar</Link>
+                                    Comprar
                                 </Button>
                             </Grid>
                         </Grid>
-
                     </div>
                 </ThemeProvider>
             </Container>

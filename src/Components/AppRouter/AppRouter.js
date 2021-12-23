@@ -9,11 +9,13 @@ import Footer from '../Footer/Footer';
 import ItemDetailPage from "../../pages/ItemDetailPage/ItemDetailPage.js";
 import CartPage from "../../pages/CartPage/CartPage.js";
 import CategoriesPage from "../../pages/CategoriesPage/CategoriesPage";
+import { CartProvider } from "../CartContext/CartContext.js";
 
 export default function AppRouter() {
 
     return (
         <BrowserRouter>
+        <CartProvider>
         <NavBar />
         <Routes> 
             <Route path="/products/:id" element = {<ItemDetailPage />} />
@@ -24,7 +26,8 @@ export default function AppRouter() {
             <Route path="/product" element = {<ProductsPage />} />
             <Route path="/" element = {<HomePage />} />
             <Route path="*" element = {<NotFoundPage />} />
-        </Routes> 
+        </Routes>
+        </CartProvider>
         <Footer />
         </BrowserRouter>
     )
