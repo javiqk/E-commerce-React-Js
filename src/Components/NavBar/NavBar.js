@@ -5,10 +5,8 @@ import { Nav, Navbar } from 'react-bootstrap';
 import CartWidget from "../CartWidget/CartWidget";
 import "../CartWidget/CartWidget.css";
 import {Link} from "react-router-dom";
-import { useParams } from "react-router-dom";
 
 export default function NavBar () {
-  const { category } = useParams()
           return (
             <div className="App">
               <Navbar bg="dark" variant="dark"
@@ -22,9 +20,9 @@ export default function NavBar () {
                   <Nav>
                     <Link className="links" to="/"><Nav>Home</Nav></Link>
                     <Link className="links" to="/"><Nav>Products</Nav></Link>
-                    <Link className="links" to={`/${category}`}><Nav>Buzos</Nav></Link>
-                    <Link className="links" to={`/${category}`}><Nav>Remeras</Nav></Link>
-                    <Link className="links" to={`/${category}`}><Nav>Aritos</Nav></Link>
+                    <Link className="links" to="/buzos/"><Nav>Buzos</Nav></Link>
+                    <Link className="links" to="/remeras/"><Nav>Remeras</Nav></Link>
+                    <Link className="links" to="/aritos/"><Nav>Aritos</Nav></Link>
                     <Link className="links" to="/aboutus"><Nav>About Us</Nav></Link>
                     <Link className="links" to="/contact"><Nav>Contact Us</Nav></Link>
                     <Link className="links" to="/cart">

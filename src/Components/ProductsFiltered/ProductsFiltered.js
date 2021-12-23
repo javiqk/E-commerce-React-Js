@@ -6,9 +6,10 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { useParams } from "react-router-dom";
 
 
-export default function FilteredItems () {
-    const [loader, setLoader] = useState(true)
+
+const FilteredItems = ({title}) => {
     const [products, setProducts] = useState([])
+    const [loader, setLoader] = useState(true)
     const { category } = useParams()
     const dataProducts = [
         {
@@ -86,26 +87,31 @@ export default function FilteredItems () {
     ]
 
     const getProducts = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(dataProducts)
-            }, 2000)
-        })
-        useEffect(() => {
-            getProducts.then(resultsProducts => {
-                resultsProducts.filter (resultProduct => {
-                    if (resultProduct.category === (category)) {
-                        setProducts(resultProduct)
+        setTimeout(() => {
+            resolve(dataProducts)
+        }, 2000)
+    })
+
+    useEffect(() => {
+        getProducts.then((resultsProducts) => {
+            if(category) {
+                resultsProducts.filter(resultProduct => {
+                    if (resultProduct.category === category) {
+                        setProducts(products => [...products, resultProduct])
                         setLoader(false)
                     }
                 })
-            })
-        }, [category])
+            }
+            else{
+                setProducts(resultsProducts)
+                setLoader(false)
+            }
+        })
+    }, [category])
 
-
-    
     return (
         <>
-            <h2>{category}</h2>
+            <h2>{category ? category : title}</h2>
             <Container className="product-container">
                 {
                     loader
@@ -115,16 +121,17 @@ export default function FilteredItems () {
                         <Grid container spacing={2}>
                             {products.map(product => {
                                 return (
-                                    <Grid item xs={3} key={products.category}>
-                                        <Item data={products} />
+                                    <Grid item xs={3} key={product.id}>
+                                        <Item data={product} />
                                     </Grid>
                                 )
                             })}
                         </Grid>
                 }
-
             </Container>
         </>
     )
 }
 
+
+export default FilteredItems

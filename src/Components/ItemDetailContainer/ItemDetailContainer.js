@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
         const [loader, setLoader] = useState(true)
         const { id } = useParams()
 
-    const dataProducts = [{
+        const dataProducts = [{
         id: 1,
         name: 'Remera Abeja',
         price: 1400,
