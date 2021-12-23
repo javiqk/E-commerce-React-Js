@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import CircularProgress from '@mui/material/CircularProgress';
 
 
-const ListItems = () => {
+    const ListItems = () => {
     const [loader, setLoader] = useState(true)
     const [products, setProducts] = useState([])
     const dataProducts = [

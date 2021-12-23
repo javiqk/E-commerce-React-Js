@@ -1,9 +1,18 @@
-.links {
+.links{
     padding-right: 12px;
     padding-left: 5px;
     text-decoration: none;
     color: white
 }
+
+#logo {
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 30px;
+    text-align: left;
+}
+
 
 .NavDropdown {
     text-decoration: none;

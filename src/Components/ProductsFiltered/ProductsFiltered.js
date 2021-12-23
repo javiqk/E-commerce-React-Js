@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useParams } from "react-router-dom";
+import "./ProductsFiltered.css";
 
 
 
@@ -111,7 +112,7 @@ const FilteredItems = ({title}) => {
 
     return (
         <>
-            <h2>{category ? category : title}</h2>
+            <h2 className='tituloCategoria'>{category ? category : title}</h2>
             <Container className="product-container">
                 {
                     loader
