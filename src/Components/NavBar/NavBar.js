@@ -26,9 +26,7 @@ export default function NavBar () {
                       </NavDropdown>
                       <Nav.Link href="/aboutus">About Us</Nav.Link>
                       <Nav.Link href="/contact">Contact Us</Nav.Link>
-                      <Link className="links" to="/cart">
                       <CartWidget/> 
-                      </Link>
                     </Nav>
                   </Navbar.Collapse>
                 </Container>

@@ -3,6 +3,7 @@ import './Item.css'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {Link} from 'react-router-dom';
 import Button from '@mui/material/Button';
+import ItemCount from "../../Components/ItemCount/ItemCount";
 
 const theme = createTheme({
     palette: {
@@ -28,8 +29,17 @@ export default function Item({ data }) {
                     <img src={`../../../assets/${data.img}`} alt="product image" />
                 </div>
                 <div className="item-info">
-                    <h2>{data.name}</h2>
-                    <Link className='link-Button__color' to={`/products/${data.id}`}><Button variant="contained" color="background">Ver detalle</Button></Link>
+                        <h2>{data.name}</h2>
+                        <div className="item-count">
+                            <div className="item-count__info">
+                                <span>Cantidad: </span>
+                            </div>
+                            <ItemCount stock={data.stock} onAdd={onAdd}/>
+                        </div>
+                        <Button variant="contained" color="background" style={{marginBottom: 10, textDecoration: 'none'}}>
+                            <Link to={`/products/${data.id}`} style={{textDecoration: 'none'}}>Ver Detalle</Link>
+                        </Button>
+                        <Button variant="contained" color="background">Agregar al carrito</Button>
                 </div>
             </ThemeProvider>
         </div>

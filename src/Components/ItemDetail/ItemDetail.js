@@ -16,7 +16,6 @@ export default function ItemDetail({ data }) {
         {
             name: data.name,
             id: data.id,
-            quantity: 0,
             price: data.price,
             image: data.img,
             quantity: 0,
@@ -36,12 +35,10 @@ export default function ItemDetail({ data }) {
 
     const onAdd = (value, name) => {
         itemCart.quantity = value
-        console.log(name)
     }
 
     const sendItem = () => {
         addProducts(itemCart)
-        console.log("Productos agregados: ", products)
     }
 
     return (

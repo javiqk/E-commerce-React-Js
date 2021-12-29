@@ -1,25 +1,27 @@
-import React, {useState , useEffect } from "react";
+import React, {useState} from 'react'
 import Button from '@mui/material/Button';
-import { Grid } from "@mui/material";
+import "../ItemCount/ItemCount.css";
 
-export default function Product ({stock, onAdd}) {
-    const [itemCount, setItemCount] = useState (0)
+export default function ItemCount({stock, onAdd}) {
+    const [itemCount, setItemCount] = useState(0)
 
     const updateItem = () => {
-        itemCount < stock && setItemCount(itemCount + 1)
-}
-    const removeItem = () => {
-        itemCount > 0 && setItemCount (itemCount - 1)
-}
+        
+        if(itemCount < stock) {
+            setItemCount(itemCount + 1)
+            onAdd(itemCount + 1, "Christian")
+        }
+    }
 
-return (
-    <div>
-        <span>Cantidad: </span>
-        <h8>{itemCount} </h8>
-        <span> stock: {stock} </span>
-        <Button variant="contained" color="success" onClick={updateItem} >+</Button>
-        <Button variant="contained" color="error" onClick={removeItem}>-</Button> 
-        <Button>Agregar al carrito</Button>
-    </div>
-)
+    const removeItem = () => {
+        itemCount > 0 && setItemCount(itemCount - 1)
+    }
+
+    return(
+        <div className="item-count__buttons">
+            <Button variant="outlined" color="base" onClick={removeItem}>-</Button>
+            <p id='itemCount'>{itemCount}</p>
+            <Button variant="outlined" color="base" onClick={updateItem} >+</Button>
+        </div>
+    )
 }
