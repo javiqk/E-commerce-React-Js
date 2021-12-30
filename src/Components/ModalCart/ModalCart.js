@@ -3,7 +3,7 @@ export default function ModalCart ({products}) {
     return(
         <div className="box-cart">
             {products.length === 0 ? (
-                <h2>No hay productos agregados</h2>
+                <h4>No hay productos agregados</h4>
             ) : (
         <> {products.map ((product) => {
             return (
@@ -11,9 +11,9 @@ export default function ModalCart ({products}) {
                     <div className='item-cart-img'>
                         <img  src={`../assets/${product.image}`} />
                     </div>
-                    <p>{product.name}</p>
-                    <p>{product.price}</p>
-                    <p>Cant: {product.quantity}</p>
+                        <p>{product.name}</p>
+                        <p>${product.price}</p>
+                        <p>Cant: {product.quantity}</p>
                 </div>
             )
         })}
