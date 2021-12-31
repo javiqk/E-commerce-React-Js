@@ -41,3 +41,12 @@
     max-height: 500px;
     overflow-y: auto;
 }
+
+.cart-container svg:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.cart-container svg{
+    transition: all 0.23s ease;
+}

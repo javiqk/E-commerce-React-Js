@@ -41,3 +41,29 @@
     max-height: 500px;
     overflow-y: auto;
 }
+
+.container-finished {
+padding: 0px 10px;
+}
+
+.container-finished p {
+float: left;
+width: 70%;
+margin: 0%;
+text-align: left;
+font-weight: bold;
+text-transform: uppercase;
+}
+
+.container-finished span {
+    float: left;
+    width: 30%;
+    }
+    
+.container-finished button {
+    margin-top: 20px;
+    width: 100%;
+    background-color: rgb(215, 255, 72);
+    color: black;
+    font-weight: bold;
+}

@@ -5,7 +5,6 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ItemCount from "../ItemCount/ItemCount";
-import {Link} from 'react-router-dom';
 import CartContext from "../../Components/CartContext/CartContext";
 
 export default function ItemDetail({ data }) {
