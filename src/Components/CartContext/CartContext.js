@@ -28,11 +28,16 @@ const CartProvider = ({children}) => {
         setTotalPrice (totalPrice + product.price * product.quantity)
         }
 
+        const removeProducts = (id) => {
+            setProducts (products.filter(product => product.id !== id ))
+        }
+
     const data = {
         products,
         addProducts,
         totalPrice,
         totalQty,
+        removeProducts,
     }
     
     return(

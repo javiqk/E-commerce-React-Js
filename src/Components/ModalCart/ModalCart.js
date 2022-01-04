@@ -15,7 +15,8 @@ const theme = createTheme({
     },
 });
 
-export default function ModalCart ({products, total, totalQty}) {
+
+export default function ModalCart ({products, total, totalQty, removeProduct}) {
 
     return(
         <div className="box-cart">
@@ -45,6 +46,7 @@ export default function ModalCart ({products, total, totalQty}) {
                 <div className='container-finished'>
                         <p>TOTAL:</p>
                         <span>$ {total}</span>
+                        <Button variant="outlined" color="base" onClick= {removeProduct}> Borrar producto</Button>
                         <Link to="/cart">
                         <Button variant="contained" color="background">Finalizar compra</Button>
                         </Link>
