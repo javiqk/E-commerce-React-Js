@@ -54,7 +54,7 @@ export default function ItemDetail({ data }) {
                                 <p>$ {data.price}</p>
                                 <ItemCount stock={data.stock} onAdd={onAdd}/>
                                 <Button variant="contained" color="background" onClick={sendItem}>
-                                    Comprar
+                                    Agregar al carrito
                                 </Button>
                             </Grid>
                         </Grid>

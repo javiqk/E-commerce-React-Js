@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import { Button } from '@mui/material';
 import CartContext from '../../Components/CartContext/CartContext';
 import ContactModal from '../../Components/ContactModal/ContactModal';
+import "./CartPage.css";
 
 export default function CartPage() {
 
@@ -61,7 +62,7 @@ export default function CartPage() {
                         <p>TOTAL</p>
                         <span>$ {totalPrice}</span>
                     </div>
-                    <Button onClick={handleClickOpen}>COMPLETAR COMPRA</Button>
+                    <Button className='button--finalizar' variant="outlined" onClick={handleClickOpen}>COMPLETAR COMPRA</Button>
                 </Grid>
             </Container>
             <ContactModal 
