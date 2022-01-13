@@ -38,7 +38,7 @@ export default function ModalCart ({products, total, totalQty, removeProduct}) {
                     </div>
                         <p>{product.name}</p>
                         <p>${product.price}</p>
-                        <span>Cant: {totalQty}</span>
+                        <span>Cant: {product.quantity}</span>
                 </div>
             )
         })}

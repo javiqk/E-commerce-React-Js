@@ -7,7 +7,7 @@ const CartContext = createContext();
 const CartProvider = ({children}) => {
     const [products, setProducts] = useState([])
     const [totalPrice, setTotalPrice] = useState(0)
-    const [totalQty, setTotalQty] = useState([])
+    const [totalQty, setTotalQty] = useState([0])
 
     const isInCart = (id) => {
         const found = products.find(product => product.id === id);

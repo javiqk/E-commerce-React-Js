@@ -48,7 +48,7 @@ export default function ContactModal({open, handleClose, products, total}) {
             open={open} 
             className="modal-contact-data"
         >
-            {orderId != null ? <h2>La orden se genero con exito {orderId}</h2> :
+            {orderId != null ? <h2>La orden se generó con éxito, código de orden: {orderId}</h2> :
                 <>
                     <DialogTitle>Completa tus datos</DialogTitle>
                         <DialogContent>
