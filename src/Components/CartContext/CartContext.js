@@ -2,10 +2,10 @@ import React from "react";
 import { createContext, useState } from "react";
 
 
-const CartContext = createContext();
+    const CartContext = createContext();
 
-const CartProvider = ({children}) => {
-    const [products, setProducts] = useState([])
+    const CartProvider = ({children}) => {
+    const [products, setProducts] = useState(JSON.parse(localStorage.getItem("productos")) || [])
     const [totalPrice, setTotalPrice] = useState(0)
     const [totalQty, setTotalQty] = useState([0])
 
@@ -25,19 +25,33 @@ const CartProvider = ({children}) => {
         }))
             :
         setProducts([...products, product])
+        addProductStorage(product)
         setTotalPrice (totalPrice + product.price * product.quantity)
         }
 
-        const removeProducts = (id) => {
-            setProducts (products.filter(product => product.id !== id ))
+        const addProductStorage = (product) => {
+            localStorage.setItem("productos", JSON.stringify([...products, product]))
         }
+
+        const onRemove = (product) => {
+            const exist = products.find((x) => x.id === product.id);
+            if (exist.qty === 1) {
+              setProducts(products.filter((x) => x.id !== product.id));
+            } else {
+              setProducts(
+                products.map((x) =>
+                  x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
+                )
+              );
+            }
+          };
 
     const data = {
         products,
         addProducts,
         totalPrice,
         totalQty,
-        removeProducts,
+        onRemove,
     }
     
     return(
