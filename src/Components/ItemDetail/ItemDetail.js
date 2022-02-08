@@ -46,8 +46,8 @@ export default function ItemDetail({ data }) {
                 <ThemeProvider theme={theme}>
                     <div>
                         <Grid container spacing={2}>
-                            <Grid item xs={8} className="container-img-detalle">
-                                <img src={`../assets/${data.img}`} />
+                            <Grid item xs={8} >
+                                <img className="container-img-detalle" src={`../assets/${data.img}`} />
                             </Grid>
                             <Grid item xs={4} >
                                 <h2>{data.name}</h2>
