@@ -4,13 +4,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
 import CartWidget from "../CartWidget/CartWidget";
 import "../CartWidget/CartWidget.css";
-import {Link} from "react-router-dom";
 
 export default function NavBar () {
           return (
             <div className="App">
               <Navbar bg="dark" variant="dark"
-                sticky="top" collapseOnSelect expand="sm">
+                sticky="top" collapseOnSelect expand="sm" className="navbar">
                 <Container>
                   <Navbar.Brand href="/" id="logo">Monkey!</Navbar.Brand>
                   <Navbar.Toggle aria-controls="basic-navbar-nav" />

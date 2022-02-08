@@ -8,7 +8,7 @@ import "./CartPage.css";
 
 export default function CartPage() {
 
-    const { products, totalPrice } = useContext(CartContext)
+    const { products, totalPrice, addProducts, onRemove } = useContext(CartContext)
     const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
@@ -31,23 +31,25 @@ export default function CartPage() {
                             <h3>Cantidad</h3>
                         </Grid>
                         <Grid item xs={2} >
-                            <h3>Precio</h3>
+                            <h3 className="product-price">Precio</h3>
                         </Grid>
                     </Grid>
                     {products.map((product) => {
                         return(
-                            <Grid key={product.id} container spacing={2} className="body-cart item-cart-page">
+                            <Grid key={product.id} container spacing={1} className="body-cart item-cart-page">
                                 <Grid item xs={2} >
                                     <img src={`../assets/${product.image}`} alt="img" />
                                 </Grid>
-                                <Grid item xs={6} >
-                                    <p>{product.name}</p>
+                                <Grid item xs={6}>
+                                    <p className='product-name'>{product.name}</p>
                                 </Grid>
                                 <Grid item xs={2} >
-                                    <p>{product.quantity}</p>
+                                    <p className='product-quantity'>{product.quantity}</p>
+                                    <Button onClick={() => addProducts (product)}>+</Button>
+                                    <Button onClick={() => onRemove (product)}>-</Button>
                                 </Grid>
                                 <Grid item xs={2} >
-                                    <p>$ {product.price}</p>
+                                    <p className='product-quantity'>$ {product.price}</p>
                                 </Grid>
                             </Grid>
                         )

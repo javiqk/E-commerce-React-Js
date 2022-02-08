@@ -56,8 +56,21 @@ p,span {
   border-bottom: 1px solid #ddd;
 }
 
-.body-cart {
-  margin-top: 0px;
+.body-cart div {
+  margin-top: 20px;
+}
+
+.product-name {
+  text-align: center;
+  padding-left: 120px;
+}
+
+.product-quantity {
+  text-align: center;
+}
+
+.product-price{
+  padding-left: 20px;
 }
 
 .body-cart div {

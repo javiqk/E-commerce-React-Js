@@ -5,46 +5,41 @@ import { createContext, useState } from "react";
     const CartContext = createContext();
 
     const CartProvider = ({children}) => {
-    const [products, setProducts] = useState(JSON.parse(localStorage.getItem("productos")) || [])
+    const [products, setProducts] = useState([])
     const [totalPrice, setTotalPrice] = useState(0)
     const [totalQty, setTotalQty] = useState([0])
 
-    const isInCart = (id) => {
-        const found = products.find(product => product.id === id);
-        return found;
+    const addProducts = (product) => {
+        const ProductExist = products.find ((item) => item.id === product.id);
+        if (ProductExist) {
+            setProducts (
+                products.map((item)=> item.id === product.id 
+                ? {...ProductExist, quantity: ProductExist.quantity +1}
+                : item )
+            );
+        } else {
+            setProducts ([...products, {...product, quantity : 1 }]);
         }
-        
-        const addProducts = (product, quantity) => {
-        isInCart(product.id)
-            ?
-            setProducts(products.map((prod) => {
-            if(prod.id === product.id) {
-            setTotalQty (prod.quantity + totalQty)
-        }
-        return prod
-        }))
-            :
-        setProducts([...products, product])
-        addProductStorage(product)
-        setTotalPrice (totalPrice + product.price * product.quantity)
-        }
-
-        const addProductStorage = (product) => {
-            localStorage.setItem("productos", JSON.stringify([...products, product]))
-        }
+    };
 
         const onRemove = (product) => {
-            const exist = products.find((x) => x.id === product.id);
-            if (exist.qty === 1) {
-              setProducts(products.filter((x) => x.id !== product.id));
+            const ProductExist = products.find ((item) => item.id === product.id);
+            if (ProductExist.quantity === 1) {
+                setProducts (products.filter((item) => item.id !== product.id));
             } else {
-              setProducts(
-                products.map((x) =>
-                  x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
-                )
-              );
+                setProducts (
+                products.map ((item) =>
+                item.id === product. id 
+                ? {...ProductExist, quantity: ProductExist.quantity -1 } : item
+            )
+            );
             }
-          };
+            };
+        
+            const clearCart = () => {
+            setProducts ([]) ;
+        }
+        
 
     const data = {
         products,
@@ -52,6 +47,7 @@ import { createContext, useState } from "react";
         totalPrice,
         totalQty,
         onRemove,
+        clearCart,
     }
     
     return(
