@@ -14,7 +14,7 @@ import { createContext, useState } from "react";
         if (ProductExist) {
             setProducts (
                 products.map((item)=> item.id === product.id 
-                ? {...ProductExist, quantity: ProductExist.quantity +1}
+                ? {...ProductExist, quantity: ProductExist.quantity + item.quantity}
                 : item )
             );
         } else {
@@ -36,9 +36,7 @@ import { createContext, useState } from "react";
             }
             };
         
-            const clearCart = () => {
-            setProducts ([]) ;
-        }
+            
         
 
     const data = {
@@ -47,7 +45,6 @@ import { createContext, useState } from "react";
         totalPrice,
         totalQty,
         onRemove,
-        clearCart,
     }
     
     return(
