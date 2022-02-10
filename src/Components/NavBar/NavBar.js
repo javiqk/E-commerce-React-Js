@@ -1,35 +1,57 @@
 import React from "react";
 import "./NavBar.css";
 import 'bootstrap/dist/css/bootstrap.css';
-import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 import CartWidget from "../CartWidget/CartWidget";
 import "../CartWidget/CartWidget.css";
 
 export default function NavBar () {
           return (
             <div className="App">
-              <Navbar bg="dark" variant="dark"
-                sticky="top" collapseOnSelect expand="sm" className="navbar">
-                <Container>
-                  <Navbar.Brand href="/" id="logo">Monkey!</Navbar.Brand>
-                  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                  <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                      <Nav.Link href="/">Home</Nav.Link>
-                      <NavDropdown title="Products" id="basic-nav-dropdown">
-                      <NavDropdown.Item href="/buzos/">Buzos</NavDropdown.Item>
-                      <NavDropdown.Item href="/remeras/">Remeras</NavDropdown.Item>
-                      <NavDropdown.Item href="/aritos/">Aritos</NavDropdown.Item>
-                      <NavDropdown.Divider />
-                      <NavDropdown.Item href="/">Ver todos los productos</NavDropdown.Item>
-                      </NavDropdown>
-                      <Nav.Link href="/aboutus">About Us</Nav.Link>
-                      <Nav.Link href="/contact">Contact Us</Nav.Link>
-                      <CartWidget/> 
-                    </Nav>
-                  </Navbar.Collapse>
-                </Container>
-              </Navbar>
-            </div>
+              <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <Link to='/' className="Link">
+                <a class="logo">Monkey</a>
+                </Link>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                    <Link to='/' className="Link">
+                      <a class="nav-link">Home</a>
+                    </Link>
+                    </li>
+                    <li class="nav-item">
+                    <Link to ='/contact' className="Link">
+                      <a class="nav-link">Contact</a>
+                    </Link>
+                    </li>
+                    <li class="nav-item">
+                    <Link to='/aboutus' className="Link">
+                      <a class="nav-link">About Us</a>
+                    </Link>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <Link to='/Products' className="Link">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Products
+                      </a>
+                    </Link>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </li>
+                  </ul>
+                  <CartWidget/> 
+                </div>
+                
+              </nav>
+              </div>       
+                  
+
+            
           );
 }

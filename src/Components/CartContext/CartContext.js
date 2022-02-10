@@ -7,18 +7,17 @@ import { createContext, useState } from "react";
     const CartProvider = ({children}) => {
     const [products, setProducts] = useState([])
     const [totalPrice, setTotalPrice] = useState(0)
-    const [totalQty, setTotalQty] = useState([0])
 
     const addProducts = (product) => {
-        const ProductExist = products.find ((item) => item.id === product.id);
+    const ProductExist = products.find ((item) => item.id === product.id);
         if (ProductExist) {
             setProducts (
                 products.map((item)=> item.id === product.id 
-                ? {...ProductExist, quantity: ProductExist.quantity + item.quantity}
+                ? {...ProductExist, quantity: ProductExist.quantity + product.quantity}
                 : item )
             );
         } else {
-            setProducts ([...products, {...product, quantity : 1 }]);
+            setProducts ([...products, {...product, quantity : product.quantity }]);
         }
     };
 
@@ -36,15 +35,18 @@ import { createContext, useState } from "react";
             }
             };
         
-            
+            const clearCart = () => {
+                setProducts ([]) ;
+            }
+              
         
 
     const data = {
         products,
         addProducts,
         totalPrice,
-        totalQty,
         onRemove,
+        clearCart,
     }
     
     return(

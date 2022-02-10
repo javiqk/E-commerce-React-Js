@@ -1,10 +1,27 @@
-footer {
-    background: rgb(71, 71, 71);
-    margin-top: 30px;
-    height: 100px;
+.main-footer {
+    color: white;
+    background-color: black;
+    padding-top: 2em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .titulos-footer {
+    color: rgb(172, 198, 255);
+    font-weight: bold;
+  }
+
+  body {
+      position: relative;
+      padding-bottom: 18rem;
+      min-height: 100vh;
+  }
+
+
+.contenedor {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.Footer-position {
-    padding-top: 40px;
-    font-size: 15px;
-}
