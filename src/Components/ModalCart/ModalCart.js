@@ -50,9 +50,9 @@ export default function ModalCart ({products, total}) {
                 <div className='container-finished'>
                         <p>TOTAL:</p>
                         <span>$ {total}</span>
-                        <Button variant="outlined" color="base" onClick={clearCart}>Vaciar carrito</Button>
+                        <Button variant="outlined" color="background" onClick={clearCart}>Vaciar carrito</Button>
                         <Link to="/cart">
-                        <Button variant="contained" color="background">Finalizar compra</Button>
+                        <Button variant="outlined" color="background">Finalizar compra</Button>
                         </Link>
                 </div>
                 </ThemeProvider>
