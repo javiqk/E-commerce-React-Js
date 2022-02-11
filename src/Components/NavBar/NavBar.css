@@ -28,7 +28,7 @@ a {
 
 #navbarNavDropdown {
     align-items: center;
-    padding-left: 800px;
+    padding-left: 700px;
 }
 
 .logo:hover {
@@ -54,3 +54,9 @@ a {
     text-decoration: none;
     color: white;
 }
+
+
+.show>.dropdown-menu {
+    display: block;
+    position: absolute;
+  }

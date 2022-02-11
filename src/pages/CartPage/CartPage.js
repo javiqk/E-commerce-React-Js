@@ -8,7 +8,7 @@ import "./CartPage.css";
 
 export default function CartPage() {
 
-    const { products, totalPrice, addProducts, onRemove } = useContext(CartContext)
+    const { products, totalPrice, addProducts, onRemove, clearCart } = useContext(CartContext)
     const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
@@ -20,6 +20,7 @@ export default function CartPage() {
     };
   
     return (
+        
         <>
             <Container className='container-cart-page'>
                 <Grid container xs={8}>
@@ -45,8 +46,10 @@ export default function CartPage() {
                                 </Grid>
                                 <Grid item xs={2} >
                                     <p className='product-quantity'>{product.quantity}</p>
-                                    <Button onClick={() => addProducts (product)}>+</Button>
-                                    <Button onClick={() => onRemove (product)}>-</Button>
+                                    <div className='contenedor-button'>
+                                    <Button id='button-resta' onClick={() => onRemove (product)}>-</Button>
+                                    <Button id='button-suma' onClick={() => addProducts (product)}>+</Button>
+                                    </div>
                                 </Grid>
                                 <Grid item xs={2} >
                                     <p className='product-quantity'>$ {product.price}</p>
@@ -64,6 +67,7 @@ export default function CartPage() {
                         <p>TOTAL</p>
                         <span>$ {totalPrice}</span>
                     </div>
+                    <Button id='button--clear--cart' variant="outlined" onClick={clearCart} href="/">VACIAR CARRITO</Button>
                     <Button className='button--finalizar' variant="outlined" onClick={handleClickOpen}>COMPLETAR COMPRA</Button>
                 </Grid>
             </Container>

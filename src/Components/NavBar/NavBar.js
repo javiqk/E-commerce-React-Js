@@ -32,17 +32,20 @@ export default function NavBar () {
                       <a class="nav-link">About Us</a>
                     </Link>
                     </li>
-                    <li class="nav-item dropdown">
-                    <Link to='/Products' className="Link">
-                      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Products
-                      </a>
+                    <li class="nav-item">
+                    <Link to='/remeras' className="Link">
+                      <a class="nav-link">Remeras</a>
                     </Link>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                      </div>
+                    </li>
+                    <li class="nav-item">
+                    <Link to='/buzos' className="Link">
+                      <a class="nav-link">Buzos</a>
+                    </Link>
+                    </li>
+                    <li class="nav-item">
+                    <Link to='/aritos' className="Link">
+                      <a class="nav-link">Aritos</a>
+                    </Link>
                     </li>
                   </ul>
                   <CartWidget/> 

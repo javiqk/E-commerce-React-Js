@@ -3,6 +3,20 @@
     color: rgb(80, 79, 79);
 }
 
+#button--clear--cart {
+  background-color: black;
+  color: rgb(80, 79, 79);
+  width: 100%;
+  background: #3a3a3a;
+  color: white;
+  margin-top: 10px;
+  font-family: 'Oswald', sans-serif !important;
+}
+
+#button--clear--cart:hover {
+  background-color: black !important;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap');
 
 h1,h2,h3,h4,button {
@@ -24,6 +38,37 @@ p,span {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.contenedor-button{
+  display: flex;
+}
+#button-resta #button-suma {
+  display: inline-block;
+  flex-direction: row;
+  padding-left: 5px;
+}
+#button-resta{
+  background-color: rgba(255, 0, 0, 0.644);
+  color: white;
+  margin-right: 5px;
+  border-radius: 15%;
+}
+#button-suma {
+  background-color: rgba(0, 128, 0, 0.671);
+  color: white;
+  margin-right: 5px;
+  border-radius: 15%;
+}
+
+#button-resta:hover {
+  background-color: rgb(255, 0, 0);
+  transition: 0.4s ease;
+}
+
+#button-suma:hover {
+  background-color: rgb(0, 128, 0);
+  transition: 0.4s ease;
 }
 
 .App-link {
@@ -139,7 +184,6 @@ z
 }
 
 .container-finish-buy {
-  /* border-top: 1px solid #ccc; */
   margin-top: 10px;
 }
 

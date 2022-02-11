@@ -1,3 +1,4 @@
+import { connectFirestoreEmulator } from "firebase/firestore";
 import React from "react";
 import { createContext, useState } from "react";
 
@@ -6,14 +7,15 @@ import { createContext, useState } from "react";
 
     const CartProvider = ({children}) => {
     const [products, setProducts] = useState([])
-    const [totalPrice, setTotalPrice] = useState(0)
+
+    const totalPrice = products.reduce ((price, item) => price + item.quantity * item.price, 0 );
 
     const addProducts = (product) => {
     const ProductExist = products.find ((item) => item.id === product.id);
         if (ProductExist) {
             setProducts (
                 products.map((item)=> item.id === product.id 
-                ? {...ProductExist, quantity: ProductExist.quantity + product.quantity}
+                ? {...ProductExist, quantity: ProductExist.quantity + 1}
                 : item )
             );
         } else {
@@ -39,7 +41,7 @@ import { createContext, useState } from "react";
                 setProducts ([]) ;
             }
               
-        
+      
 
     const data = {
         products,
@@ -47,6 +49,7 @@ import { createContext, useState } from "react";
         totalPrice,
         onRemove,
         clearCart,
+        totalPrice,
     }
     
     return(

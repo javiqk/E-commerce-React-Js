@@ -1,7 +1,9 @@
+import React, {useContext} from 'react'
 import {Link} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './ModalCart.css';
+import CartContext from '../CartContext/CartContext';
 
 
 const theme = createTheme({
@@ -18,7 +20,7 @@ const theme = createTheme({
 
 
 export default function ModalCart ({products, total}) {
-
+    const {clearCart} = useContext(CartContext)
     return(
         <div className="box-cart">
             {products.length === 0 ? (
@@ -36,10 +38,11 @@ export default function ModalCart ({products, total}) {
                 <div className='item-cart-list' key={product.id}>
                     <div className='item-cart-img'>
                         <img  src={`../assets/${product.image}`} />
-                    </div>
+                        </div>
                         <p>{product.name}</p>
                         <p>${product.price}</p>
                         <span>Cant: {product.quantity}</span>
+
                 </div>
             )
         })}
@@ -47,7 +50,7 @@ export default function ModalCart ({products, total}) {
                 <div className='container-finished'>
                         <p>TOTAL:</p>
                         <span>$ {total}</span>
-                        <Button variant="outlined" color="base"> Borrar producto</Button>
+                        <Button variant="outlined" color="base" onClick={clearCart}>Vaciar carrito</Button>
                         <Link to="/cart">
                         <Button variant="contained" color="background">Finalizar compra</Button>
                         </Link>
