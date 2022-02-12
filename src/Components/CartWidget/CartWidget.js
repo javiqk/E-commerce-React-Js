@@ -1,8 +1,8 @@
 import React, {useState, useEffect, useContext} from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import "../CartWidget/CartWidget.css"
-import CartContext from "../../Components/CartContext/CartContext"
-import ModalCart from "../../Components/ModalCart/ModalCart"
+import "../CartWidget/CartWidget.css";
+import CartContext from "../../Components/CartContext/CartContext";
+import ModalCart from "../../Components/ModalCart/ModalCart";
 
 const CartWidget = () => {
     const [showCart, setShowCart ] = useState(false)

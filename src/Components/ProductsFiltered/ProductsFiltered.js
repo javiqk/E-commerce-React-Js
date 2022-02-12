@@ -24,8 +24,10 @@ const FilteredItems = ({title}) => {
         });
         return productosList;
     }
+
     
-    useEffect(() => {
+    
+    useState(() => {
         getProducts(db).then((resultsProducts) => {
             if(category) {
                 resultsProducts.filter(resultProduct => {

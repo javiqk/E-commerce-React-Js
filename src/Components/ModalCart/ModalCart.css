@@ -28,6 +28,10 @@
     border-top: 1px solid #d6d6d6;
 }
 
+.box-cart .item-cart-list p {
+    padding-top: 10px;
+}
+
 .item-cart-img {
     width: 80px;
     padding: 5px 0px;
