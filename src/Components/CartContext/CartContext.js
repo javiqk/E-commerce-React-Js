@@ -1,4 +1,3 @@
-import { connectFirestoreEmulator } from "firebase/firestore";
 import React from "react";
 import { createContext, useState } from "react";
 
@@ -9,6 +8,7 @@ import { createContext, useState } from "react";
     const [products, setProducts] = useState([])
 
     const totalPrice = products.reduce ((price, item) => price + item.quantity * item.price, 0 );
+    const totalCartItems = products.length;
 
     const addProducts = (product) => {
     const ProductExist = products.find ((item) => item.id === product.id);
@@ -50,6 +50,7 @@ import { createContext, useState } from "react";
         onRemove,
         clearCart,
         totalPrice,
+        totalCartItems,
     }
     
     return(

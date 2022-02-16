@@ -1,12 +1,15 @@
 import './ItemDetail.css';
 import { useState, useContext } from 'react';
+import {Link} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CartContext from "../../Components/CartContext/CartContext";
 
+
 export default function ItemDetail({ data }) {
+
     const { addProducts , products} = useContext(CartContext)
     console.log("data item: ", data)
     const [itemCart, setItemCart] = useState(
@@ -29,9 +32,6 @@ export default function ItemDetail({ data }) {
         },
     });
 
-
-
-
     const sendItem = () => {
         addProducts(itemCart)
     }
@@ -53,6 +53,11 @@ export default function ItemDetail({ data }) {
                                 <Button variant="contained" color="background" onClick={sendItem}>
                                     Agregar al carrito
                                 </Button>
+                                <Link to="/">
+                                <Button variant="contained" color="background" id='button-productos'>
+                                    Ver mas productos
+                                </Button>
+                                </Link>
                             </Grid>
                         </Grid>
                     </div>

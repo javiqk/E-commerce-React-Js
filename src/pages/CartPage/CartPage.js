@@ -1,4 +1,5 @@
 import React, {useContext, useState} from 'react'
+import {Link} from 'react-router-dom';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { Button } from '@mui/material';
@@ -20,6 +21,15 @@ export default function CartPage() {
     };
   
     return (
+        <div>
+            {products.length === 0 ? (
+            <>
+                <h4>No hay productos agregados</h4>
+                <Link to="/">
+                    <Button variant="contained" color="background">Ver productos</Button>
+                </Link>
+            </>
+            ) : (
         
         <>
             <Container className='container-cart-page'>
@@ -79,4 +89,8 @@ export default function CartPage() {
             />
         </>
     )
+    }
+</div>
+
+)
 }

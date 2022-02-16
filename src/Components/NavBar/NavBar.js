@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom'
 import CartWidget from "../CartWidget/CartWidget";
 import "../CartWidget/CartWidget.css";
 import FilteredItems from "../ProductsFiltered/ProductsFiltered";
+import CartContext from "../CartContext/CartContext";
 
-export default function NavBar (products) {
+export default function NavBar (){
+const {totalCartItems} = useContext (CartContext);
           return (
             <div className="App">
               <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -49,13 +51,10 @@ export default function NavBar (products) {
                     </Link>
                     </li>
                   </ul>
-                  <CartWidget/> 
-                  <span className="total-cart-number">{products.lenght === 0 ? "" : products.lenght}</span>
+                  <CartWidget/>            
+                  <span className="total-cart-number">{totalCartItems}</span>
                 </div>
               </nav>
-              </div>       
-                  
-
-            
+              </div>                    
           );
 }

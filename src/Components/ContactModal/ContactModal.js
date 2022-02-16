@@ -1,17 +1,18 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import {Link} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
-import CloseIcon from '@mui/icons-material/Close';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import "../ContactModal/ContactModal.css";
 import db from '../../firebase';
 import { collection, addDoc } from 'firebase/firestore';
+import CartContext from '../CartContext/CartContext';
 
 export default function ContactModal({open, handleClose, products, total}) {
-
+    const {clearCart } = useContext(CartContext)
     const [formData, setFormData] = useState({
         nombre : '',
         telefono : '',
@@ -48,7 +49,18 @@ export default function ContactModal({open, handleClose, products, total}) {
             open={open} 
             className="modal-contact-data"
         >
-            {orderId != null ? <h2>La orden se generó con éxito, código de orden: {orderId}</h2> :
+        
+            {orderId != null ? 
+            <>
+                <h2>La orden se generó con éxito, código de orden: {orderId}</h2>
+                <div className='container-button-order'>
+                <Link to="/">
+                  <Button id="button-order" onClick={clearCart}>ir a Home</Button>  
+                </Link>         
+                </div>
+            </>
+
+            :
                 <>
                     <DialogTitle>Completa tus datos</DialogTitle>
                         <DialogContent>

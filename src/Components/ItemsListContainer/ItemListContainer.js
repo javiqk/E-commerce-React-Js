@@ -42,7 +42,6 @@ import db from "../../firebase";
     }, [])
 
 
-    
     return (
         <>
             <h2>Productos Destacados</h2>

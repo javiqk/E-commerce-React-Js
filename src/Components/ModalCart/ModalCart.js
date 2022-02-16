@@ -42,7 +42,6 @@ export default function ModalCart ({products, total}) {
                         <p>{product.name}</p>
                         <p>${product.price}</p>
                         <span>Cant: {product.quantity}</span>
-
                 </div>
             )
         })}
@@ -58,7 +57,7 @@ export default function ModalCart ({products, total}) {
                 </ThemeProvider>
         </>
             )}
-</div>
+    </div>
 
 
 )

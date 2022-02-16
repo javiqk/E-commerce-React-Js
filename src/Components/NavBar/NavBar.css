@@ -69,7 +69,8 @@ a {
   }
 
   .total-cart-number {
-      color: white;
-      background-color: red;
-      border-radius: 20%;
-  }
+    color: white;
+    background-color: red;
+    width: 15px;
+    border-radius: 50%;
+}
