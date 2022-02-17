@@ -44,17 +44,17 @@ import db from "../../firebase";
 
     return (
         <>
-            <h2>Productos Destacados</h2>
+            <h2 className='titulo-index'>Productos Destacados</h2>
             <Container className="product-container">
                 {
                     loader
                         ?
                         <CircularProgress />
                         :
-                        <Grid container spacing={2}>
+                        <Grid container spacing={2} >
                             {products.map(product => {
                                 return (
-                                    <Grid item xs={3} key={product.id}>
+                                    <Grid item xs={3} key={product.id} id="grid-productos">
                                         <Item data={product} />
                                     </Grid>
                                 )

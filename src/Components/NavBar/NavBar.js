@@ -6,6 +6,7 @@ import CartWidget from "../CartWidget/CartWidget";
 import "../CartWidget/CartWidget.css";
 import FilteredItems from "../ProductsFiltered/ProductsFiltered";
 import CartContext from "../CartContext/CartContext";
+import Badge from 'react-bootstrap/Badge'
 
 export default function NavBar (){
 const {totalCartItems} = useContext (CartContext);
@@ -32,7 +33,7 @@ const {totalCartItems} = useContext (CartContext);
                     </li>
                     <li class="nav-item">
                     <Link to='/aboutus' className="Link" id="link-subrayado-navbar">
-                      <a class="nav-link">About Us</a>
+                      <a class="nav-link">AboutUs</a>
                     </Link>
                     </li>
                     <li class="nav-item">
@@ -51,8 +52,8 @@ const {totalCartItems} = useContext (CartContext);
                     </Link>
                     </li>
                   </ul>
-                  <CartWidget/>            
-                  <span className="total-cart-number">{totalCartItems}</span>
+                  <CartWidget/>
+                  <Badge bg="danger">{totalCartItems}</Badge>            
                 </div>
               </nav>
               </div>                    
